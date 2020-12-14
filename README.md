@@ -9,6 +9,5 @@ This color picker takes the same features as @arthay's picker, but with an updat
 - English:
   - [Installing and running]()
 - 中文：
- - 
 
 ## Installing and running 
