@@ -7,7 +7,7 @@ This color picker takes the same features as @arthay's picker, but with an updat
 # Table of contents
 
 - English:
-  - [Installing and running]()
+  - [Installing and running](https://github.com/diningcity-group/vue-color-picker/blob/main/README.md#installing-and-running)
 - 中文：
 
 ## Installing and running 
