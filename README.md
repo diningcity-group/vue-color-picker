@@ -2,7 +2,7 @@
 
 This repository is a fork of the awesome [Vue Color Gradient Picker](https://github.com/arthay/vue-color-gradient-picker).
 
-This color picker takes the same features as @arthay's picker, but with an updated user experience.
+This color picker takes the same features as the previous picker, but with an updated user experience.
 
 # Table of contents
 
