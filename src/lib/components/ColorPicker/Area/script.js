@@ -53,7 +53,7 @@ export default {
             this.updateColor({
                 degree: this.degreeValue
             });
-            this.degreeValue += '°'
+            this.degreeValue = parseInt(this.degreeValue, 10) + '°'
         },
 
         changeDegree(event) {

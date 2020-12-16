@@ -74,7 +74,7 @@ export default {
             this.updateColor({
                 alpha: Number((parseFloat(this.alphaValue) / 100).toFixed(2))
             });
-            this.alphaValue += '%'
+            this.alphaValue = parseInt(this.alphaValue, 10) + '%'
         },
 
         changeAlpha(event) {
