@@ -17,4 +17,4 @@
 
 <script src="./script.js" />
 
-<style src="./index.scss" lang="scss" />
+<style src="./index.less" lang="less" />

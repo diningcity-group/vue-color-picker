@@ -112,6 +112,7 @@ export default {
         },
 
         keyUpHandler(event) {
+            if(event.target.tagName === 'INPUT') return
             if ((event.keyCode === 46 || event.keyCode === 8)) {
                 this.removePoint(this.activePointIndex);
             }

@@ -9,6 +9,7 @@ export default {
         green: Number,
         blue: Number,
         alpha: Number,
+        points: Array,
         updateColor: Function,
     },
 
