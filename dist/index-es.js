@@ -1327,6 +1327,15 @@ var __vue_render__$6 = function() {
           blur: _vm.onBlur,
           input: function($event) {
             return _vm.$emit("input", $event)
+          },
+          keyup: function($event) {
+            if (
+              !$event.type.indexOf("key") &&
+              _vm._k($event.keyCode, "enter", 13, $event.key, "Enter")
+            ) {
+              return null
+            }
+            return _vm.onBlur($event)
           }
         }
       })
@@ -1345,7 +1354,7 @@ __vue_render__$6._withStripped = true;
   /* style */
   var __vue_inject_styles__$6 = function (inject) {
     if (!inject) { return }
-    inject("data-v-385ca1fb_0", { source: ".input-field {\n  display: flex;\n  align-items: center;\n  flex-direction: column;\n}\n.input-field + .input-field {\n  margin-left: 14px;\n}\n.input-field .label {\n  font-size: 12px;\n  line-height: 15px;\n  font-weight: 600;\n  margin-top: 6px;\n  margin-bottom: 0;\n  color: #1F2667;\n}\n.input-field .input-container {\n  display: flex;\n  align-items: center;\n  position: relative;\n  width: 100%;\n  color: #333;\n}\n.input-field .input-container .input {\n  width: 100%;\n  outline: 0;\n  text-align: center;\n  color: #333;\n  border: 0;\n  border-bottom: 1px solid #333;\n  height: 18px;\n  font-size: 12px;\n  padding: 0 1px;\n}\n", map: undefined, media: undefined });
+    inject("data-v-512be964_0", { source: ".input-field {\n  display: flex;\n  align-items: center;\n  flex-direction: column;\n}\n.input-field + .input-field {\n  margin-left: 14px;\n}\n.input-field .label {\n  font-size: 12px;\n  line-height: 15px;\n  font-weight: 600;\n  margin-top: 6px;\n  margin-bottom: 0;\n  color: #1F2667;\n}\n.input-field .input-container {\n  display: flex;\n  align-items: center;\n  position: relative;\n  width: 100%;\n  color: #333;\n}\n.input-field .input-container .input {\n  width: 100%;\n  outline: 0;\n  text-align: center;\n  color: #333;\n  border: 0;\n  border-bottom: 1px solid #333;\n  height: 18px;\n  font-size: 12px;\n  padding: 0 1px;\n}\n", map: undefined, media: undefined });
 
   };
   /* scoped */
@@ -1421,7 +1430,7 @@ var script$7 = {
             this.updateColor({
                 degree: this.degreeValue
             });
-            this.degreeValue += '°';
+            this.degreeValue = parseInt(this.degreeValue, 10) + '°';
         },
 
         changeDegree: function changeDegree(event) {
@@ -1645,7 +1654,7 @@ var script$8 = {
             this.updateColor({
                 alpha: Number((parseFloat(this.alphaValue) / 100).toFixed(2))
             });
-            this.alphaValue += '%';
+            this.alphaValue = parseInt(this.alphaValue, 10) + '%';
         },
 
         changeAlpha: function changeAlpha(event) {
