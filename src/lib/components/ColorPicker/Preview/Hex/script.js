@@ -22,7 +22,7 @@ export default {
         return {
             inProgress: false,
             hexValue: '#' + rgbToHex(this.red, this.green, this.blue),
-            alphaValue: (parseInt(this.alpha * 100, 10) || 100) + '%'
+            alphaValue: this.toPercent(this.alpha)
         }
     },
 
@@ -41,6 +41,14 @@ export default {
     },
 
     methods: {
+        toPercent(value) {
+            return (parseInt(value * 100, 10) || 100) + '%'
+        },
+
+        toFloat(num) {
+            return Number((parseInt(num, 10) / 100).toFixed(2))
+        },
+
         setHex() {
             if (this.inProgress) {
                 return;
@@ -50,7 +58,7 @@ export default {
         },
 
         setAlpha() {
-            this.alphaValue = (parseInt(this.alpha * 100, 10) || 100) + '%'
+            this.alphaValue = this.toPercent(this.alpha)
         },
 
         changeHex(event) {
@@ -59,20 +67,20 @@ export default {
             if (color) {
                 this.updateColor({
                     ...color, 
-                    alpha: Number((parseFloat(this.alphaValue) / 100).toFixed(2))
+                    alpha: this.toFloat(this.alphaValue)
                 });
             }
         },
 
         onFocus() {
             this.inProgress = true
-            this.alphaValue = String(this.alphaValue).replace(/%/, '')
+            this.alphaValue = parseInt(this.alphaValue, 10)
         },
 
         onBlur() {
             this.inProgress = false
             this.updateColor({
-                alpha: Number((parseFloat(this.alphaValue) / 100).toFixed(2))
+                alpha: this.toFloat(this.alphaValue)
             });
             this.alphaValue = parseInt(this.alphaValue, 10) + '%'
         },

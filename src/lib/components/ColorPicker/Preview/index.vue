@@ -22,6 +22,7 @@
                 :red="red"
                 :green="green"
                 :blue="blue"
+                :alpha="alpha"
                 :updateColor="updateColor"
             />
         </div>

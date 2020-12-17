@@ -1417,18 +1417,18 @@ var script$7 = {
 
     data: function data() {
         return {
-            degreeValue: this.degree + '°'
+            degreeValue: parseInt(this.degree, 10) + '°'
         }
     },
 
     methods: {
         onFocus: function onFocus() {
-            this.degreeValue = String(this.degreeValue).replace(/°/, '');
+            this.degreeValue = parseInt(this.degreeValue, 10);
         },
 
         onBlur: function onBlur() {
             this.updateColor({
-                degree: this.degreeValue
+                degree: parseInt(this.degreeValue, 10)
             });
             this.degreeValue = parseInt(this.degreeValue, 10) + '°';
         },
@@ -1604,7 +1604,7 @@ var script$8 = {
         return {
             inProgress: false,
             hexValue: '#' + rgbToHex(this.red, this.green, this.blue),
-            alphaValue: (parseInt(this.alpha * 100, 10) || 100) + '%'
+            alphaValue: this.toPercent(this.alpha)
         }
     },
 
@@ -1623,6 +1623,14 @@ var script$8 = {
     },
 
     methods: {
+        toPercent: function toPercent(value) {
+            return (parseInt(value * 100, 10) || 100) + '%'
+        },
+
+        toFloat: function toFloat(num) {
+            return Number((parseInt(num, 10) / 100).toFixed(2))
+        },
+
         setHex: function setHex() {
             if (this.inProgress) {
                 return;
@@ -1632,7 +1640,7 @@ var script$8 = {
         },
 
         setAlpha: function setAlpha() {
-            this.alphaValue = (parseInt(this.alpha * 100, 10) || 100) + '%';
+            this.alphaValue = this.toPercent(this.alpha);
         },
 
         changeHex: function changeHex(event) {
@@ -1640,19 +1648,19 @@ var script$8 = {
 
             if (color) {
                 this.updateColor(Object.assign({}, color, 
-                    {alpha: Number((parseFloat(this.alphaValue) / 100).toFixed(2))}));
+                    {alpha: this.toFloat(this.alphaValue)}));
             }
         },
 
         onFocus: function onFocus() {
             this.inProgress = true;
-            this.alphaValue = String(this.alphaValue).replace(/%/, '');
+            this.alphaValue = parseInt(this.alphaValue, 10);
         },
 
         onBlur: function onBlur() {
             this.inProgress = false;
             this.updateColor({
-                alpha: Number((parseFloat(this.alphaValue) / 100).toFixed(2))
+                alpha: this.toFloat(this.alphaValue)
             });
             this.alphaValue = parseInt(this.alphaValue, 10) + '%';
         },
@@ -2075,6 +2083,7 @@ var __vue_render__$b = function() {
                   red: _vm.red,
                   green: _vm.green,
                   blue: _vm.blue,
+                  alpha: _vm.alpha,
                   updateColor: _vm.updateColor
                 }
               })

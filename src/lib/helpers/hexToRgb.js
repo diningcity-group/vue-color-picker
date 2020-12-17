@@ -1,4 +1,5 @@
-import { rgbToHsv, setRgba } from './index';
+import rgbToHsv from './rgbToHsv';
+import setRgba from './setRgba';
 
 const hexRegexp = /(^#{0,1}[0-9A-F]{6}$)|(^#{0,1}[0-9A-F]{3}$)|(^#{0,1}[0-9A-F]{8}$)/i;
 
