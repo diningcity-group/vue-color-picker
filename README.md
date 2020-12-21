@@ -9,5 +9,5 @@ This color picker takes the same features as the previous picker, but with an up
 - English:
   - [Installing and running](https://github.com/diningcity-group/vue-color-picker/blob/main/README.md#installing-and-running)
 - 中文：
-
+  - [安装和运行](https://github.com/diningcity-group/vue-color-picker/blob/main/README-ZH.md)
 ## Installing and running 
