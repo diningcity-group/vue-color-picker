@@ -25,7 +25,7 @@ export default {
 
   data() {
     return {
-      color: {
+      color: {red: 186, green: 68, blue: 68, alpha: 1} || {
         points: [
           { left: 0, red: 186, green: 68, blue: 68, alpha: 1 },
           { left: 100, red: 255, green: 0, blue: 0, alpha: 1 },
