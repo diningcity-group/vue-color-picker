@@ -9,9 +9,47 @@ This color picker takes the same features as the previous picker, but with an up
 
 # Table of contents
 
-  - [Installing and running](https://github.com/diningcity-group/vue-color-picker/blob/main/README.md#installing-and-running)
+- [Installing and running](https://github.com/diningcity-group/vue-color-picker/blob/main/README.md#installing-and-running)
+- [Pre-setting colors]()
 
 ## Installing and running 
+
+To install from the command line:
+
+````shell
+npm install vue-color-picker@https://github.com/diningcity-group/vue-color-picker.git#0.1.1
+````
+
+To add & use the component:
+
+````vue
+<template>
+  <ColorPicker :color="color" :onEndChange="onChange" />
+</template>
+<script>
+import { ColorPicker } from "vue-color-picker";
+
+export default {
+  components: {
+    ColorPicker,
+  },
+  data() {
+    return {
+      color: {}
+    }
+  },
+  methods: {
+    onChange(color) {
+      this.color = color;
+    }
+  }
+}
+</script>
+````
+
+## Pre-setting colors
+
+
 
 
 # 欢迎使用 Vue Color Picker
@@ -22,10 +60,11 @@ This color picker takes the same features as the previous picker, but with an up
 
 # 目录
 
-- 中文：
-  - [安装和运行](https://github.com/diningcity-group/vue-color-picker/blob/main/README.md#%E5%AE%89%E8%A3%85%E5%92%8C%E8%BF%90%E8%A1%8C)
+- [安装和运行](https://github.com/diningcity-group/vue-color-picker/blob/main/README.md#%E5%AE%89%E8%A3%85%E5%92%8C%E8%BF%90%E8%A1%8C)
+- [预设颜色值](https://github.com/diningcity-group/vue-color-picker#%E9%A2%84%E8%AE%BE%E9%A2%9C%E8%89%B2%E5%80%BC)
 
 ## 安装和运行
+
 从命令行安装
 ````shell
 npm install vue-color-picker@https://github.com/diningcity-group/vue-color-picker.git#0.1.1
@@ -58,6 +97,7 @@ export default {
 ````
 
 ## 预设颜色值
+
 可以通过 `color` 属性传入预设的演示值， `color` 是一个json格式的对象，如果是单色值，需要符合以下格式:
 ````js
 {
