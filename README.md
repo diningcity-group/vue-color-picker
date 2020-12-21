@@ -1,3 +1,6 @@
+- [English](https://github.com/diningcity-group/vue-color-picker/blob/main/README.md#welcome-to-the-vue-color-picker) 
+- [Chinese Simplified / 中文](https://github.com/diningcity-group/vue-color-picker/blob/main/README.md#%E6%AC%A2%E8%BF%8E%E4%BD%BF%E7%94%A8-vue-color-picker)
+
 # Welcome to the Vue Color Picker
 
 This repository is a fork of the awesome [Vue Color Gradient Picker](https://github.com/arthay/vue-color-gradient-picker).
@@ -6,10 +9,8 @@ This color picker takes the same features as the previous picker, but with an up
 
 # Table of contents
 
-- English:
   - [Installing and running](https://github.com/diningcity-group/vue-color-picker/blob/main/README.md#installing-and-running)
-- 中文：
-  - [安装和运行](https://github.com/diningcity-group/vue-color-picker/blob/main/README.md#-安装和运行)
+
 ## Installing and running 
 
 
@@ -21,10 +22,8 @@ This color picker takes the same features as the previous picker, but with an up
 
 # 目录
 
-- English:
-  - [Installing and running](https://github.com/diningcity-group/vue-color-picker/blob/main/README.md#installing-and-running)
 - 中文：
-  - [安装和运行](https://github.com/diningcity-group/vue-color-picker/blob/main/README.md#安装和运行)
+  - [安装和运行](https://github.com/diningcity-group/vue-color-picker/blob/main/README.md#%E5%AE%89%E8%A3%85%E5%92%8C%E8%BF%90%E8%A1%8C)
 
 ## 安装和运行
 从命令行安装
