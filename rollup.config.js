@@ -3,7 +3,7 @@ import nodeResolve from '@rollup/plugin-node-resolve';
 import babel from '@rollup/plugin-buble';
 import json from '@rollup/plugin-json';
 import commonjs from '@rollup/plugin-commonjs';
-import scss from 'rollup-plugin-scss';
+import less from 'rollup-plugin-less';
 import copy from 'rollup-plugin-copy-assets';
 import includePaths from 'rollup-plugin-includepaths';
 import alias from '@rollup/plugin-alias';
@@ -29,7 +29,7 @@ const config = {
     }],
     plugins: [
         vue(),
-        scss({
+        less({
             output: 'dist/index.css',
         }),
         nodeResolve({

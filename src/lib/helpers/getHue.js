@@ -1,4 +1,4 @@
-import { hsvToRgb } from './index';
+import hsvToRgb from './hsvToRgb';
 
 export default function getHue(offsetX, width, saturation, value) {
     let hue = ((360 * offsetX) / width) | 0;

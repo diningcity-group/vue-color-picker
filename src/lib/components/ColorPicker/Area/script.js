@@ -40,20 +40,20 @@ export default {
 
     data() {
         return {
-            degreeValue: this.degree + '°'
+            degreeValue: parseInt(this.degree, 10) + '°'
         }
     },
 
     methods: {
         onFocus() {
-            this.degreeValue = String(this.degreeValue).replace(/°/, '')
+            this.degreeValue = parseInt(this.degreeValue, 10)
         },
 
         onBlur() {
             this.updateColor({
-                degree: this.degreeValue
+                degree: parseInt(this.degreeValue, 10)
             });
-            this.degreeValue += '°'
+            this.degreeValue = parseInt(this.degreeValue, 10) + '°'
         },
 
         changeDegree(event) {

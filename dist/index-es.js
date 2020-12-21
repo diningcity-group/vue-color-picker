@@ -1327,6 +1327,15 @@ var __vue_render__$6 = function() {
           blur: _vm.onBlur,
           input: function($event) {
             return _vm.$emit("input", $event)
+          },
+          keyup: function($event) {
+            if (
+              !$event.type.indexOf("key") &&
+              _vm._k($event.keyCode, "enter", 13, $event.key, "Enter")
+            ) {
+              return null
+            }
+            return _vm.onBlur($event)
           }
         }
       })
@@ -1345,7 +1354,7 @@ __vue_render__$6._withStripped = true;
   /* style */
   var __vue_inject_styles__$6 = function (inject) {
     if (!inject) { return }
-    inject("data-v-013749e6_0", { source: ".input-field {\n  display: flex;\n  align-items: center;\n  flex-direction: column;\n}\n.input-field + .input-field {\n  margin-left: 14px;\n}\n.input-field .label {\n  font-size: 12px;\n  line-height: 15px;\n  font-weight: 600;\n  margin-top: 6px;\n  margin-bottom: 0;\n  color: #1F2667;\n}\n.input-field .input-container {\n  display: flex;\n  align-items: center;\n  position: relative;\n  width: 100%;\n  color: #333;\n}\n.input-field .input-container .input {\n  width: 100%;\n  outline: 0;\n  text-align: center;\n  color: #333;\n  border: 0;\n  border-bottom: 1px solid #333;\n  height: 18px;\n  font-size: 12px;\n  padding: 0 1px;\n}", map: undefined, media: undefined });
+    inject("data-v-512be964_0", { source: ".input-field {\n  display: flex;\n  align-items: center;\n  flex-direction: column;\n}\n.input-field + .input-field {\n  margin-left: 14px;\n}\n.input-field .label {\n  font-size: 12px;\n  line-height: 15px;\n  font-weight: 600;\n  margin-top: 6px;\n  margin-bottom: 0;\n  color: #1F2667;\n}\n.input-field .input-container {\n  display: flex;\n  align-items: center;\n  position: relative;\n  width: 100%;\n  color: #333;\n}\n.input-field .input-container .input {\n  width: 100%;\n  outline: 0;\n  text-align: center;\n  color: #333;\n  border: 0;\n  border-bottom: 1px solid #333;\n  height: 18px;\n  font-size: 12px;\n  padding: 0 1px;\n}\n", map: undefined, media: undefined });
 
   };
   /* scoped */
@@ -1408,20 +1417,20 @@ var script$7 = {
 
     data: function data() {
         return {
-            degreeValue: this.degree + '°'
+            degreeValue: parseInt(this.degree, 10) + '°'
         }
     },
 
     methods: {
         onFocus: function onFocus() {
-            this.degreeValue = String(this.degreeValue).replace(/°/, '');
+            this.degreeValue = parseInt(this.degreeValue, 10);
         },
 
         onBlur: function onBlur() {
             this.updateColor({
-                degree: this.degreeValue
+                degree: parseInt(this.degreeValue, 10)
             });
-            this.degreeValue += '°';
+            this.degreeValue = parseInt(this.degreeValue, 10) + '°';
         },
 
         changeDegree: function changeDegree(event) {
@@ -1595,7 +1604,7 @@ var script$8 = {
         return {
             inProgress: false,
             hexValue: '#' + rgbToHex(this.red, this.green, this.blue),
-            alphaValue: (parseInt(this.alpha * 100, 10) || 100) + '%'
+            alphaValue: this.toPercent(this.alpha)
         }
     },
 
@@ -1614,6 +1623,14 @@ var script$8 = {
     },
 
     methods: {
+        toPercent: function toPercent(value) {
+            return (parseInt(value * 100, 10) || 100) + '%'
+        },
+
+        toFloat: function toFloat(num) {
+            return Number((parseInt(num, 10) / 100).toFixed(2))
+        },
+
         setHex: function setHex() {
             if (this.inProgress) {
                 return;
@@ -1623,7 +1640,7 @@ var script$8 = {
         },
 
         setAlpha: function setAlpha() {
-            this.alphaValue = (parseInt(this.alpha * 100, 10) || 100) + '%';
+            this.alphaValue = this.toPercent(this.alpha);
         },
 
         changeHex: function changeHex(event) {
@@ -1631,21 +1648,21 @@ var script$8 = {
 
             if (color) {
                 this.updateColor(Object.assign({}, color, 
-                    {alpha: Number((parseFloat(this.alphaValue) / 100).toFixed(2))}));
+                    {alpha: this.toFloat(this.alphaValue)}));
             }
         },
 
         onFocus: function onFocus() {
             this.inProgress = true;
-            this.alphaValue = String(this.alphaValue).replace(/%/, '');
+            this.alphaValue = parseInt(this.alphaValue, 10);
         },
 
         onBlur: function onBlur() {
             this.inProgress = false;
             this.updateColor({
-                alpha: Number((parseFloat(this.alphaValue) / 100).toFixed(2))
+                alpha: this.toFloat(this.alphaValue)
             });
-            this.alphaValue += '%';
+            this.alphaValue = parseInt(this.alphaValue, 10) + '%';
         },
 
         changeAlpha: function changeAlpha(event) {
@@ -1995,6 +2012,7 @@ var script$b = {
         green: Number,
         blue: Number,
         alpha: Number,
+        points: Array,
         updateColor: Function,
     },
 
@@ -2623,6 +2641,7 @@ var script$e = {
         },
 
         keyUpHandler: function keyUpHandler(event) {
+            if(event.target.tagName === 'INPUT') { return }
             if ((event.keyCode === 46 || event.keyCode === 8)) {
                 this.removePoint(this.activePointIndex);
             }

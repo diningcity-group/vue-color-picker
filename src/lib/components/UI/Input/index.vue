@@ -7,6 +7,7 @@
                 @blur="onBlur"
                 :value="value"
                 @input="$emit('input', $event)"
+                @keyup.enter="onBlur"
             />
         </div>
         <div class="label" v-if="label">
@@ -17,4 +18,4 @@
 
 <script src="./script.js" />
 
-<style src="./index.scss" lang="scss" />
+<style src="./index.less" lang="less" />
