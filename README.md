@@ -10,7 +10,7 @@ This color picker takes the same features as the previous picker, but with an up
 # Table of contents
 
 - [Installing and running](https://github.com/diningcity-group/vue-color-picker/blob/main/README.md#installing-and-running)
-- [Pre-setting colors]()
+- [Preset colors](https://github.com/diningcity-group/vue-color-picker#preset-colors)
 
 ## Installing and running 
 
