@@ -1,4 +1,4 @@
-- [English](https://github.com/diningcity-group/vue-color-picker/blob/main/README.md#welcome-to-the-vue-color-picker) 
+- [English](https://github.com/diningcity-group/vue-color-picker#welcome-to-the-vue-color-picker) 
 - [Chinese Simplified / 中文](https://github.com/diningcity-group/vue-color-picker/blob/main/README.md#%E6%AC%A2%E8%BF%8E%E4%BD%BF%E7%94%A8-vue-color-picker)
 
 # Welcome to the Vue Color Picker
