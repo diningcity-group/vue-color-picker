@@ -1,5 +1,5 @@
 - [English](https://github.com/diningcity-group/vue-color-picker#welcome-to-the-vue-color-picker) 
-- [Chinese Simplified / 中文](https://github.com/diningcity-group/vue-color-picker/blob/main/README.md#%E6%AC%A2%E8%BF%8E%E4%BD%BF%E7%94%A8-vue-color-picker)
+- [Chinese Simplified / 中文](https://github.com/diningcity-group/vue-color-picker#%E6%AC%A2%E8%BF%8E%E4%BD%BF%E7%94%A8-vue-color-picker)
 
 # Welcome to the Vue Color Picker
 
@@ -9,7 +9,7 @@ This color picker takes the same features as the previous picker, but with an up
 
 # Table of contents
 
-- [Installing and running](https://github.com/diningcity-group/vue-color-picker/blob/main/README.md#installing-and-running)
+- [Installing and running](https://github.com/diningcity-group/vue-color-picker#installing-and-running)
 - [Preset colors](https://github.com/diningcity-group/vue-color-picker#preset-colors)
 
 ## Installing and running 
@@ -84,7 +84,7 @@ Gradient values can also be preset, by following the same format as the output g
 
 # 目录
 
-- [安装和运行](https://github.com/diningcity-group/vue-color-picker/blob/main/README.md#%E5%AE%89%E8%A3%85%E5%92%8C%E8%BF%90%E8%A1%8C)
+- [安装和运行](https://github.com/diningcity-group/vue-color-picker#%E5%AE%89%E8%A3%85%E5%92%8C%E8%BF%90%E8%A1%8C)
 - [预设颜色值](https://github.com/diningcity-group/vue-color-picker#%E9%A2%84%E8%AE%BE%E9%A2%9C%E8%89%B2%E5%80%BC)
 
 ## 安装和运行
